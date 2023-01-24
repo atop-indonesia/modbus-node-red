@@ -1,1 +1,787 @@
-[]
+[
+    {
+        "id": "9d4d999b85a27873",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "6a1fb6519e6f9b71",
+        "type": "modbus-client",
+        "name": "",
+        "clienttype": "tcp",
+        "bufferCommands": true,
+        "stateLogEnabled": false,
+        "queueLogEnabled": false,
+        "failureLogEnabled": true,
+        "tcpHost": "127.0.0.1",
+        "tcpPort": "502",
+        "tcpType": "DEFAULT",
+        "serialPort": "/dev/ttyUSB",
+        "serialType": "RTU-BUFFERD",
+        "serialBaudrate": "9600",
+        "serialDatabits": "8",
+        "serialStopbits": "1",
+        "serialParity": "none",
+        "serialConnectionDelay": "100",
+        "serialAsciiResponseStartDelimiter": "0x3A",
+        "unit_id": "1",
+        "commandDelay": "1",
+        "clientTimeout": "1000",
+        "reconnectOnTimeout": true,
+        "reconnectTimeout": "2000",
+        "parallelUnitIdsAllowed": true,
+        "showWarnings": true,
+        "showLogs": true
+    },
+    {
+        "id": "dd5e36a18ea1a8e4",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d66c274eb1c1ce17",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "d4b3eb9bda2b472c",
+        "type": "ui_group",
+        "name": "Relay",
+        "tab": "d66c274eb1c1ce17",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ed4ac9b2273bb88c",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "foo",
+        "name": "",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "1.x",
+        "url": "http://localhost:8086",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "5827e0ab0fc298e1",
+        "type": "ui_group",
+        "name": "Analog",
+        "tab": "d66c274eb1c1ce17",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "78000570b9cc1bb2",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "3dbe90fbd91d7fcf",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "78000570b9cc1bb2",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f93c06489e643050",
+        "type": "modbus-read",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "name": "relay, fc 1, addr 0, qty 2",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "2",
+        "rate": "2",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "6a1fb6519e6f9b71",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 200,
+        "y": 200,
+        "wires": [
+            [
+                "d39b3350eda5843a",
+                "c4fde9a589c21939"
+            ],
+            []
+        ],
+        "info": "# Relay"
+    },
+    {
+        "id": "96eeb974774e8c8e",
+        "type": "ui_switch",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "label": "relay 1",
+        "tooltip": "",
+        "group": "d4b3eb9bda2b472c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            [
+                "a9071160fc7021bd"
+            ]
+        ]
+    },
+    {
+        "id": "ad489de549d99ae9",
+        "type": "ui_switch",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "label": "relay 2",
+        "tooltip": "",
+        "group": "d4b3eb9bda2b472c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 650,
+        "y": 240,
+        "wires": [
+            [
+                "37f44b68556af0c4"
+            ]
+        ]
+    },
+    {
+        "id": "d39b3350eda5843a",
+        "type": "change",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 160,
+        "wires": [
+            [
+                "96eeb974774e8c8e"
+            ]
+        ]
+    },
+    {
+        "id": "c4fde9a589c21939",
+        "type": "change",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[1]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "ad489de549d99ae9"
+            ]
+        ]
+    },
+    {
+        "id": "56b465134697c064",
+        "type": "modbus-write",
+        "z": "9d4d999b85a27873",
+        "name": "fc 5, addr 1",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "1",
+        "quantity": "1",
+        "server": "6a1fb6519e6f9b71",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 990,
+        "y": 240,
+        "wires": [
+            [
+                "e8068717d2bac580"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e8068717d2bac580",
+        "type": "debug",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "37f44b68556af0c4",
+        "type": "rbe",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 810,
+        "y": 240,
+        "wires": [
+            [
+                "56b465134697c064"
+            ]
+        ]
+    },
+    {
+        "id": "a9071160fc7021bd",
+        "type": "rbe",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 810,
+        "y": 160,
+        "wires": [
+            [
+                "3a7b65a44f2add6e"
+            ]
+        ]
+    },
+    {
+        "id": "3a7b65a44f2add6e",
+        "type": "modbus-write",
+        "z": "9d4d999b85a27873",
+        "name": "fc 5, addr 0",
+        "showStatusActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "1",
+        "dataType": "Coil",
+        "adr": "0",
+        "quantity": "1",
+        "server": "6a1fb6519e6f9b71",
+        "emptyMsgOnFail": false,
+        "keepMsgProperties": false,
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "x": 990,
+        "y": 160,
+        "wires": [
+            [
+                "ad3c801e8eef6984"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "ad3c801e8eef6984",
+        "type": "debug",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 990,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "3fb020b5a24824ff",
+        "type": "modbus-read",
+        "z": "9d4d999b85a27873",
+        "name": "analog, fc 4, addr 0, qty 4",
+        "topic": "",
+        "showStatusActivities": false,
+        "logIOActivities": false,
+        "showErrors": false,
+        "showWarnings": true,
+        "unitid": "",
+        "dataType": "InputRegister",
+        "adr": "0",
+        "quantity": "4",
+        "rate": "2",
+        "rateUnit": "s",
+        "delayOnStart": false,
+        "startDelayTime": "",
+        "server": "6a1fb6519e6f9b71",
+        "useIOFile": false,
+        "ioFile": "",
+        "useIOForPayload": false,
+        "emptyMsgOnFail": false,
+        "x": 210,
+        "y": 500,
+        "wires": [
+            [
+                "7f67c43f2e6ece0d"
+            ],
+            []
+        ],
+        "info": "# Relay"
+    },
+    {
+        "id": "7f67c43f2e6ece0d",
+        "type": "change",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload[0]",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 470,
+        "y": 440,
+        "wires": [
+            [
+                "0a3399b5325763bb"
+            ]
+        ]
+    },
+    {
+        "id": "0a3399b5325763bb",
+        "type": "influxdb out",
+        "z": "9d4d999b85a27873",
+        "influxdb": "ed4ac9b2273bb88c",
+        "name": "",
+        "measurement": "mee",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 730,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "dd1bd77276340a8a",
+        "type": "influxdb in",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "influxdb": "ed4ac9b2273bb88c",
+        "name": "",
+        "query": "select * from mee;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 550,
+        "y": 700,
+        "wires": [
+            [
+                "fbadc8577eb380d8"
+            ]
+        ]
+    },
+    {
+        "id": "e7af19eecf67c1ac",
+        "type": "inject",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 700,
+        "wires": [
+            [
+                "dd1bd77276340a8a"
+            ]
+        ]
+    },
+    {
+        "id": "fbadc8577eb380d8",
+        "type": "function",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "name": "",
+        "func": "const payload = msg.payload;\n\nlet chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 700,
+        "wires": [
+            [
+                "1b19c339390cd985"
+            ]
+        ]
+    },
+    {
+        "id": "1b19c339390cd985",
+        "type": "ui_chart",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "name": "",
+        "group": "5827e0ab0fc298e1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c7acce4b03fbd951",
+        "type": "function",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "func": "msg.query = \"select * from mee where time > now() - 30m;\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 480,
+        "wires": [
+            [
+                "bc06d14a2983d86d"
+            ]
+        ]
+    },
+    {
+        "id": "37574150a919bf21",
+        "type": "complete",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "scope": [
+            "0a3399b5325763bb"
+        ],
+        "uncaught": false,
+        "x": 670,
+        "y": 480,
+        "wires": [
+            [
+                "c7acce4b03fbd951"
+            ]
+        ]
+    },
+    {
+        "id": "63041f170c4311a9",
+        "type": "ui_chart",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "group": "3dbe90fbd91d7fcf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1430,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc06d14a2983d86d",
+        "type": "influxdb in",
+        "z": "9d4d999b85a27873",
+        "influxdb": "ed4ac9b2273bb88c",
+        "name": "",
+        "query": "select * from mee;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 1050,
+        "y": 480,
+        "wires": [
+            [
+                "e720fb6bcde2c755"
+            ]
+        ]
+    },
+    {
+        "id": "e720fb6bcde2c755",
+        "type": "function",
+        "z": "9d4d999b85a27873",
+        "name": "",
+        "func": "const payload = msg.payload;\n\nlet chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 480,
+        "wires": [
+            [
+                "63041f170c4311a9"
+            ]
+        ]
+    }
+]
