@@ -3,6 +3,11 @@ modbus-2
 
 testmodbus
 
+Database influxDB
+
+database: foo
+measurement: mee
+
 ### About
 
 This is your project's README.md file. It helps users understand what your

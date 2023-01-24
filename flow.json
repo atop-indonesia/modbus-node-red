@@ -556,117 +556,6 @@
         "wires": []
     },
     {
-        "id": "dd1bd77276340a8a",
-        "type": "influxdb in",
-        "z": "9d4d999b85a27873",
-        "d": true,
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "query": "select * from mee;",
-        "rawOutput": false,
-        "precision": "",
-        "retentionPolicy": "",
-        "org": "organisation",
-        "x": 550,
-        "y": 700,
-        "wires": [
-            [
-                "fbadc8577eb380d8"
-            ]
-        ]
-    },
-    {
-        "id": "e7af19eecf67c1ac",
-        "type": "inject",
-        "z": "9d4d999b85a27873",
-        "d": true,
-        "name": "",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 120,
-        "y": 700,
-        "wires": [
-            [
-                "dd1bd77276340a8a"
-            ]
-        ]
-    },
-    {
-        "id": "fbadc8577eb380d8",
-        "type": "function",
-        "z": "9d4d999b85a27873",
-        "d": true,
-        "name": "",
-        "func": "const payload = msg.payload;\n\nlet chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 750,
-        "y": 700,
-        "wires": [
-            [
-                "1b19c339390cd985"
-            ]
-        ]
-    },
-    {
-        "id": "1b19c339390cd985",
-        "type": "ui_chart",
-        "z": "9d4d999b85a27873",
-        "d": true,
-        "name": "",
-        "group": "5827e0ab0fc298e1",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 930,
-        "y": 700,
-        "wires": [
-            []
-        ]
-    },
-    {
         "id": "c7acce4b03fbd951",
         "type": "function",
         "z": "9d4d999b85a27873",
@@ -707,8 +596,8 @@
         "type": "ui_chart",
         "z": "9d4d999b85a27873",
         "name": "",
-        "group": "3dbe90fbd91d7fcf",
-        "order": 1,
+        "group": "5827e0ab0fc298e1",
+        "order": 0,
         "width": 0,
         "height": 0,
         "label": "chart",
@@ -782,6 +671,117 @@
             [
                 "63041f170c4311a9"
             ]
+        ]
+    },
+    {
+        "id": "e7af19eecf67c1ac",
+        "type": "inject",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 320,
+        "y": 700,
+        "wires": [
+            [
+                "dd1bd77276340a8a"
+            ]
+        ]
+    },
+    {
+        "id": "dd1bd77276340a8a",
+        "type": "influxdb in",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "influxdb": "ed4ac9b2273bb88c",
+        "name": "",
+        "query": "select * from mee;",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 550,
+        "y": 700,
+        "wires": [
+            [
+                "fbadc8577eb380d8"
+            ]
+        ]
+    },
+    {
+        "id": "fbadc8577eb380d8",
+        "type": "function",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "name": "",
+        "func": "const payload = msg.payload;\n\nlet chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 780,
+        "y": 700,
+        "wires": [
+            [
+                "1b19c339390cd985"
+            ]
+        ]
+    },
+    {
+        "id": "1b19c339390cd985",
+        "type": "ui_chart",
+        "z": "9d4d999b85a27873",
+        "d": true,
+        "name": "",
+        "group": "5827e0ab0fc298e1",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 950,
+        "y": 700,
+        "wires": [
+            []
         ]
     }
 ]
