@@ -4,9 +4,12 @@ modbus-2
 testmodbus
 
 Database influxDB
+create database foo
+use foo
 
 database: foo
 measurement: mee
+
 
 ### About
 
