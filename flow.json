@@ -355,7 +355,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 650,
+        "x": 630,
         "y": 160,
         "wires": [
             [
@@ -389,7 +389,7 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 650,
+        "x": 630,
         "y": 240,
         "wires": [
             [
@@ -469,12 +469,10 @@
         "keepMsgProperties": false,
         "delayOnStart": false,
         "startDelayTime": "",
-        "x": 990,
+        "x": 930,
         "y": 240,
         "wires": [
-            [
-                "e8068717d2bac580"
-            ],
+            [],
             []
         ]
     },
@@ -490,7 +488,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 810,
+        "x": 770,
         "y": 240,
         "wires": [
             [
@@ -510,7 +508,7 @@
         "septopics": true,
         "property": "payload",
         "topi": "topic",
-        "x": 810,
+        "x": 770,
         "y": 160,
         "wires": [
             [
@@ -536,251 +534,15 @@
         "keepMsgProperties": false,
         "delayOnStart": false,
         "startDelayTime": "",
-        "x": 990,
+        "x": 930,
         "y": 160,
         "wires": [
-            [
-                "ad3c801e8eef6984"
-            ],
+            [],
             []
         ]
     },
     {
-        "id": "ad3c801e8eef6984",
-        "type": "debug",
-        "z": "9d4d999b85a27873",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 990,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "e8068717d2bac580",
-        "type": "debug",
-        "z": "9d4d999b85a27873",
-        "name": "",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 990,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "480cbf0aa964ae40",
-        "type": "modbus-read",
-        "z": "0b296fd2c55b20a5",
-        "d": true,
-        "name": "",
-        "topic": "",
-        "showStatusActivities": false,
-        "logIOActivities": false,
-        "showErrors": false,
-        "showWarnings": true,
-        "unitid": "",
-        "dataType": "Input",
-        "adr": "0",
-        "quantity": "6",
-        "rate": "10",
-        "rateUnit": "s",
-        "delayOnStart": false,
-        "startDelayTime": "",
-        "server": "6a1fb6519e6f9b71",
-        "useIOFile": false,
-        "ioFile": "",
-        "useIOForPayload": false,
-        "emptyMsgOnFail": false,
-        "x": 150,
-        "y": 420,
-        "wires": [
-            [
-                "e16d59da743c2070",
-                "a5f86855f8c38554",
-                "c3c06e06e76b30aa",
-                "02e2d29faae64c43",
-                "632971533a67d47f",
-                "413c7a4be9878356"
-            ],
-            []
-        ]
-    },
-    {
-        "id": "e16d59da743c2070",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[0]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 120,
-        "wires": [
-            [
-                "10b83fb45cf43277"
-            ]
-        ]
-    },
-    {
-        "id": "a5f86855f8c38554",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[1]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 240,
-        "wires": [
-            [
-                "993133d029c70d1c"
-            ]
-        ]
-    },
-    {
-        "id": "c3c06e06e76b30aa",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[2]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 360,
-        "wires": [
-            [
-                "fc4af71890923543"
-            ]
-        ]
-    },
-    {
-        "id": "02e2d29faae64c43",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[3]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 480,
-        "wires": [
-            [
-                "16d05f014f0e35e6"
-            ]
-        ]
-    },
-    {
-        "id": "632971533a67d47f",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[4]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 600,
-        "wires": [
-            [
-                "794a0f67d744c566"
-            ]
-        ]
-    },
-    {
-        "id": "413c7a4be9878356",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[5]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 390,
-        "y": 720,
-        "wires": [
-            [
-                "905c8449a46740e6"
-            ]
-        ]
-    },
-    {
-        "id": "edaefde378f90b48",
+        "id": "c9ab7a504b025048",
         "type": "ui_text",
         "z": "0b296fd2c55b20a5",
         "group": "eba6a2f91a29c61e",
@@ -792,178 +554,12 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 900,
+        "x": 860,
         "y": 120,
         "wires": []
     },
     {
-        "id": "5c5d5e302ada1309",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 100,
-        "wires": [
-            [
-                "edaefde378f90b48"
-            ]
-        ]
-    },
-    {
-        "id": "10b83fb45cf43277",
-        "type": "switch",
-        "z": "0b296fd2c55b20a5",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 550,
-        "y": 120,
-        "wires": [
-            [
-                "5c5d5e302ada1309"
-            ],
-            [
-                "d98eac7bb9462af2"
-            ]
-        ]
-    },
-    {
-        "id": "d98eac7bb9462af2",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 140,
-        "wires": [
-            [
-                "edaefde378f90b48"
-            ]
-        ]
-    },
-    {
-        "id": "993133d029c70d1c",
-        "type": "switch",
-        "z": "0b296fd2c55b20a5",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 550,
-        "y": 240,
-        "wires": [
-            [
-                "09f1e2022a444fbc"
-            ],
-            [
-                "5ac9486d8876690e"
-            ]
-        ]
-    },
-    {
-        "id": "09f1e2022a444fbc",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 220,
-        "wires": [
-            [
-                "eeb33ad8167a3ce7"
-            ]
-        ]
-    },
-    {
-        "id": "5ac9486d8876690e",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 260,
-        "wires": [
-            [
-                "eeb33ad8167a3ce7"
-            ]
-        ]
-    },
-    {
-        "id": "eeb33ad8167a3ce7",
+        "id": "68d603a5da0577f7",
         "type": "ui_text",
         "z": "0b296fd2c55b20a5",
         "group": "eba6a2f91a29c61e",
@@ -975,95 +571,12 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 900,
-        "y": 240,
+        "x": 860,
+        "y": 180,
         "wires": []
     },
     {
-        "id": "fc4af71890923543",
-        "type": "switch",
-        "z": "0b296fd2c55b20a5",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 550,
-        "y": 360,
-        "wires": [
-            [
-                "6cbec4e97bf7befa"
-            ],
-            [
-                "0b1b0c92eada538c"
-            ]
-        ]
-    },
-    {
-        "id": "6cbec4e97bf7befa",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 340,
-        "wires": [
-            [
-                "865cc5a474dc79ff"
-            ]
-        ]
-    },
-    {
-        "id": "0b1b0c92eada538c",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 380,
-        "wires": [
-            [
-                "865cc5a474dc79ff"
-            ]
-        ]
-    },
-    {
-        "id": "865cc5a474dc79ff",
+        "id": "c742616a03948f2a",
         "type": "ui_text",
         "z": "0b296fd2c55b20a5",
         "group": "eba6a2f91a29c61e",
@@ -1075,95 +588,12 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 900,
-        "y": 360,
+        "x": 860,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "16d05f014f0e35e6",
-        "type": "switch",
-        "z": "0b296fd2c55b20a5",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 550,
-        "y": 480,
-        "wires": [
-            [
-                "d17b6c4531eb159f"
-            ],
-            [
-                "8226672d1292f311"
-            ]
-        ]
-    },
-    {
-        "id": "d17b6c4531eb159f",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 460,
-        "wires": [
-            [
-                "3824138891f58913"
-            ]
-        ]
-    },
-    {
-        "id": "8226672d1292f311",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 500,
-        "wires": [
-            [
-                "3824138891f58913"
-            ]
-        ]
-    },
-    {
-        "id": "3824138891f58913",
+        "id": "e8a330423c312798",
         "type": "ui_text",
         "z": "0b296fd2c55b20a5",
         "group": "eba6a2f91a29c61e",
@@ -1175,95 +605,12 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 900,
-        "y": 480,
+        "x": 860,
+        "y": 320,
         "wires": []
     },
     {
-        "id": "794a0f67d744c566",
-        "type": "switch",
-        "z": "0b296fd2c55b20a5",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 550,
-        "y": 600,
-        "wires": [
-            [
-                "63cc3e88c417c5de"
-            ],
-            [
-                "b616254f7542d097"
-            ]
-        ]
-    },
-    {
-        "id": "63cc3e88c417c5de",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 580,
-        "wires": [
-            [
-                "b3bac96361fbd267"
-            ]
-        ]
-    },
-    {
-        "id": "b616254f7542d097",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 620,
-        "wires": [
-            [
-                "b3bac96361fbd267"
-            ]
-        ]
-    },
-    {
-        "id": "b3bac96361fbd267",
+        "id": "e27b2b5352263bdb",
         "type": "ui_text",
         "z": "0b296fd2c55b20a5",
         "group": "eba6a2f91a29c61e",
@@ -1275,95 +622,12 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 900,
-        "y": 600,
+        "x": 860,
+        "y": 380,
         "wires": []
     },
     {
-        "id": "905c8449a46740e6",
-        "type": "switch",
-        "z": "0b296fd2c55b20a5",
-        "name": "",
-        "property": "payload",
-        "propertyType": "msg",
-        "rules": [
-            {
-                "t": "true"
-            },
-            {
-                "t": "false"
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 2,
-        "x": 550,
-        "y": 720,
-        "wires": [
-            [
-                "f7f5842660108a81"
-            ],
-            [
-                "8959caa86e8ec39b"
-            ]
-        ]
-    },
-    {
-        "id": "f7f5842660108a81",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "on",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 700,
-        "wires": [
-            [
-                "3c7ecd31f7012d6d"
-            ]
-        ]
-    },
-    {
-        "id": "8959caa86e8ec39b",
-        "type": "change",
-        "z": "0b296fd2c55b20a5",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "off",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 710,
-        "y": 740,
-        "wires": [
-            [
-                "3c7ecd31f7012d6d"
-            ]
-        ]
-    },
-    {
-        "id": "3c7ecd31f7012d6d",
+        "id": "57894e0eee743414",
         "type": "ui_text",
         "z": "0b296fd2c55b20a5",
         "group": "eba6a2f91a29c61e",
@@ -1375,12 +639,12 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "className": "",
-        "x": 900,
-        "y": 720,
+        "x": 860,
+        "y": 440,
         "wires": []
     },
     {
-        "id": "6b402a44a67dd83e",
+        "id": "7d97082dd9a02684",
         "type": "modbus-read",
         "z": "0b296fd2c55b20a5",
         "name": "",
@@ -1393,7 +657,7 @@
         "dataType": "Input",
         "adr": "0",
         "quantity": "6",
-        "rate": "10",
+        "rate": "30",
         "rateUnit": "s",
         "delayOnStart": false,
         "startDelayTime": "",
@@ -1402,11 +666,151 @@
         "ioFile": "",
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
-        "x": 150,
-        "y": 980,
+        "x": 230,
+        "y": 180,
         "wires": [
-            [],
+            [
+                "bf48202bccfce56f"
+            ],
             []
+        ]
+    },
+    {
+        "id": "bf48202bccfce56f",
+        "type": "function",
+        "z": "0b296fd2c55b20a5",
+        "name": "map msg.payload",
+        "func": "const payload = msg.payload;\n\nconst mapped = payload.map((b, i) => {\n    const v = b ? \"On\" : \"Off\";\n    return {i, v};\n});\n\nmsg.payload = mapped;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 180,
+        "wires": [
+            [
+                "c31035903f10dc65"
+            ]
+        ],
+        "info": "# map msg.payload\r\n\r\n---\r\n\r\n## from\r\n\r\n`[value, value, value]`\r\n\r\n## into\r\n\r\n```\r\n[\r\n    {i: index, str: value},\r\n    {i: index, str: value},\r\n    {i: index, str: value},\r\n]\r\n```"
+    },
+    {
+        "id": "4a2176bf6f661c56",
+        "type": "switch",
+        "z": "0b296fd2c55b20a5",
+        "name": "",
+        "property": "index",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "num"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "num"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 6,
+        "x": 610,
+        "y": 280,
+        "wires": [
+            [
+                "c9ab7a504b025048"
+            ],
+            [
+                "68d603a5da0577f7"
+            ],
+            [
+                "c742616a03948f2a"
+            ],
+            [
+                "e8a330423c312798"
+            ],
+            [
+                "e27b2b5352263bdb"
+            ],
+            [
+                "57894e0eee743414"
+            ]
+        ]
+    },
+    {
+        "id": "c31035903f10dc65",
+        "type": "split",
+        "z": "0b296fd2c55b20a5",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 230,
+        "y": 280,
+        "wires": [
+            [
+                "6a022205a495751e"
+            ]
+        ]
+    },
+    {
+        "id": "6a022205a495751e",
+        "type": "change",
+        "z": "0b296fd2c55b20a5",
+        "name": "set msg.pyld, msg.idx",
+        "rules": [
+            {
+                "t": "set",
+                "p": "index",
+                "pt": "msg",
+                "to": "payload.i",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.v",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 280,
+        "wires": [
+            [
+                "4a2176bf6f661c56"
+            ]
         ]
     },
     {
