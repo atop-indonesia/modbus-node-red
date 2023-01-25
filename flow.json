@@ -8,14 +8,6 @@
         "env": []
     },
     {
-        "id": "1dedcb3b4ff4c7fd",
-        "type": "tab",
-        "label": "Analog",
-        "disabled": true,
-        "info": "",
-        "env": []
-    },
-    {
         "id": "0b296fd2c55b20a5",
         "type": "tab",
         "label": "Digital Input",
@@ -24,9 +16,9 @@
         "env": []
     },
     {
-        "id": "018472ea23256c7f",
+        "id": "b0413dc278aac9e3",
         "type": "tab",
-        "label": "Flow 3",
+        "label": "Analog",
         "disabled": false,
         "info": "",
         "env": []
@@ -257,26 +249,6 @@
         "className": ""
     },
     {
-        "id": "d834635475645efc",
-        "type": "ui_spacer",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "spacer",
-        "group": "e961e33ce780b073",
-        "order": 2,
-        "width": "16",
-        "height": "1"
-    },
-    {
-        "id": "8bb4c520a9cdd42f",
-        "type": "ui_spacer",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "spacer",
-        "group": "3dbe90fbd91d7fcf",
-        "order": 2,
-        "width": "16",
-        "height": "1"
-    },
-    {
         "id": "eba6a2f91a29c61e",
         "type": "ui_group",
         "name": "Digital Input",
@@ -286,6 +258,26 @@
         "width": "6",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "b3734c400a1ada57",
+        "type": "ui_spacer",
+        "z": "b0413dc278aac9e3",
+        "name": "spacer",
+        "group": "e961e33ce780b073",
+        "order": 2,
+        "width": "16",
+        "height": "1"
+    },
+    {
+        "id": "160364fe03410feb",
+        "type": "ui_spacer",
+        "z": "b0413dc278aac9e3",
+        "name": "spacer",
+        "group": "3dbe90fbd91d7fcf",
+        "order": 2,
+        "width": "16",
+        "height": "1"
     },
     {
         "id": "a1ad0c48.5e52f",
@@ -586,787 +578,6 @@
         "x": 990,
         "y": 280,
         "wires": []
-    },
-    {
-        "id": "3fb020b5a24824ff",
-        "type": "modbus-read",
-        "z": "1dedcb3b4ff4c7fd",
-        "d": true,
-        "name": "analog, fc 4, addr 0, qty 4",
-        "topic": "",
-        "showStatusActivities": false,
-        "logIOActivities": false,
-        "showErrors": false,
-        "showWarnings": true,
-        "unitid": "",
-        "dataType": "InputRegister",
-        "adr": "0",
-        "quantity": "4",
-        "rate": "10",
-        "rateUnit": "s",
-        "delayOnStart": false,
-        "startDelayTime": "",
-        "server": "6a1fb6519e6f9b71",
-        "useIOFile": false,
-        "ioFile": "",
-        "useIOForPayload": false,
-        "emptyMsgOnFail": false,
-        "x": 230,
-        "y": 240,
-        "wires": [
-            [
-                "7f67c43f2e6ece0d",
-                "e0d09adaebb3ba6a",
-                "3768a8bf66273466",
-                "66ce8642a45989e4"
-            ],
-            []
-        ],
-        "info": "# Relay"
-    },
-    {
-        "id": "7f67c43f2e6ece0d",
-        "type": "change",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[0]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 120,
-        "wires": [
-            [
-                "f247a40d33a6a04c"
-            ]
-        ]
-    },
-    {
-        "id": "0a3399b5325763bb",
-        "type": "influxdb out",
-        "z": "1dedcb3b4ff4c7fd",
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "measurement": "",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "ms",
-        "retentionPolicyV18Flux": "",
-        "org": "organisation",
-        "bucket": "bucket",
-        "x": 950,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "e7af19eecf67c1ac",
-        "type": "inject",
-        "z": "1dedcb3b4ff4c7fd",
-        "d": true,
-        "name": "init",
-        "props": [
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "",
-        "payload": "",
-        "payloadType": "date",
-        "x": 210,
-        "y": 640,
-        "wires": [
-            [
-                "7fed21a696d3a33f",
-                "17dc67aa9def843e",
-                "921ed3114fa2418e",
-                "0d48e8d1b5c68a32"
-            ]
-        ]
-    },
-    {
-        "id": "dd1bd77276340a8a",
-        "type": "influxdb in",
-        "z": "1dedcb3b4ff4c7fd",
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "query": "",
-        "rawOutput": false,
-        "precision": "",
-        "retentionPolicy": "",
-        "org": "organisation",
-        "x": 650,
-        "y": 540,
-        "wires": [
-            [
-                "fbadc8577eb380d8"
-            ]
-        ]
-    },
-    {
-        "id": "fbadc8577eb380d8",
-        "type": "function",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.pyld",
-        "func": "const payload = msg.payload;\n\nconst chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nmsg.label = \"test\"\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 540,
-        "wires": [
-            [
-                "1b19c339390cd985"
-            ]
-        ]
-    },
-    {
-        "id": "1b19c339390cd985",
-        "type": "ui_chart",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "",
-        "group": "3dbe90fbd91d7fcf",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "{{msg.label}}",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1030,
-        "y": 540,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f247a40d33a6a04c",
-        "type": "change",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.msrmt",
-        "rules": [
-            {
-                "t": "set",
-                "p": "measurement",
-                "pt": "msg",
-                "to": "analog_0",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 120,
-        "wires": [
-            [
-                "0a3399b5325763bb"
-            ]
-        ]
-    },
-    {
-        "id": "e0d09adaebb3ba6a",
-        "type": "change",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[1]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 200,
-        "wires": [
-            [
-                "40db896ee6283907"
-            ]
-        ]
-    },
-    {
-        "id": "40db896ee6283907",
-        "type": "change",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.msrmt",
-        "rules": [
-            {
-                "t": "set",
-                "p": "measurement",
-                "pt": "msg",
-                "to": "analog_1",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 200,
-        "wires": [
-            [
-                "584e20ec908b5ce6"
-            ]
-        ]
-    },
-    {
-        "id": "584e20ec908b5ce6",
-        "type": "influxdb out",
-        "z": "1dedcb3b4ff4c7fd",
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "measurement": "",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "ms",
-        "retentionPolicyV18Flux": "",
-        "org": "organisation",
-        "bucket": "bucket",
-        "x": 950,
-        "y": 200,
-        "wires": []
-    },
-    {
-        "id": "3768a8bf66273466",
-        "type": "change",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[2]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 280,
-        "wires": [
-            [
-                "d22cbf9302a50e12"
-            ]
-        ]
-    },
-    {
-        "id": "d22cbf9302a50e12",
-        "type": "change",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.msrmt",
-        "rules": [
-            {
-                "t": "set",
-                "p": "measurement",
-                "pt": "msg",
-                "to": "analog_2",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 280,
-        "wires": [
-            [
-                "05fc6e7d657e4f3e"
-            ]
-        ]
-    },
-    {
-        "id": "05fc6e7d657e4f3e",
-        "type": "influxdb out",
-        "z": "1dedcb3b4ff4c7fd",
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "measurement": "",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "ms",
-        "retentionPolicyV18Flux": "",
-        "org": "organisation",
-        "bucket": "bucket",
-        "x": 950,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "66ce8642a45989e4",
-        "type": "change",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.pyld",
-        "rules": [
-            {
-                "t": "set",
-                "p": "payload",
-                "pt": "msg",
-                "to": "payload[3]",
-                "tot": "msg"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 490,
-        "y": 360,
-        "wires": [
-            [
-                "bf2e47495d8ab6e8"
-            ]
-        ]
-    },
-    {
-        "id": "bf2e47495d8ab6e8",
-        "type": "change",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.msrmt",
-        "rules": [
-            {
-                "t": "set",
-                "p": "measurement",
-                "pt": "msg",
-                "to": "analog_3",
-                "tot": "str"
-            }
-        ],
-        "action": "",
-        "property": "",
-        "from": "",
-        "to": "",
-        "reg": false,
-        "x": 700,
-        "y": 360,
-        "wires": [
-            [
-                "91fc946ac9e0ce8a"
-            ]
-        ]
-    },
-    {
-        "id": "91fc946ac9e0ce8a",
-        "type": "influxdb out",
-        "z": "1dedcb3b4ff4c7fd",
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "measurement": "",
-        "precision": "",
-        "retentionPolicy": "",
-        "database": "database",
-        "precisionV18FluxV20": "ms",
-        "retentionPolicyV18Flux": "",
-        "org": "organisation",
-        "bucket": "bucket",
-        "x": 950,
-        "y": 360,
-        "wires": []
-    },
-    {
-        "id": "7fed21a696d3a33f",
-        "type": "function",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.qry",
-        "func": "msg.query = \"select * from analog_0 where time > now() - 30m;\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 540,
-        "wires": [
-            [
-                "dd1bd77276340a8a"
-            ]
-        ]
-    },
-    {
-        "id": "ded84721ed43cc9d",
-        "type": "complete",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "",
-        "scope": [
-            "584e20ec908b5ce6",
-            "05fc6e7d657e4f3e",
-            "91fc946ac9e0ce8a",
-            "0a3399b5325763bb"
-        ],
-        "uncaught": false,
-        "x": 190,
-        "y": 680,
-        "wires": [
-            [
-                "7fed21a696d3a33f",
-                "17dc67aa9def843e",
-                "921ed3114fa2418e",
-                "0d48e8d1b5c68a32"
-            ]
-        ]
-    },
-    {
-        "id": "17dc67aa9def843e",
-        "type": "function",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.qry",
-        "func": "msg.query = \"select * from analog_1 where time > now() - 30m;\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 640,
-        "wires": [
-            [
-                "44873ea013937b25"
-            ]
-        ]
-    },
-    {
-        "id": "44873ea013937b25",
-        "type": "influxdb in",
-        "z": "1dedcb3b4ff4c7fd",
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "query": "",
-        "rawOutput": false,
-        "precision": "",
-        "retentionPolicy": "",
-        "org": "organisation",
-        "x": 650,
-        "y": 640,
-        "wires": [
-            [
-                "cec7970339a58353"
-            ]
-        ]
-    },
-    {
-        "id": "cec7970339a58353",
-        "type": "function",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.pyld",
-        "func": "const payload = msg.payload;\n\nconst chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 640,
-        "wires": [
-            [
-                "712339de2ace2fc9"
-            ]
-        ]
-    },
-    {
-        "id": "712339de2ace2fc9",
-        "type": "ui_chart",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "",
-        "group": "3dbe90fbd91d7fcf",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1030,
-        "y": 640,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "921ed3114fa2418e",
-        "type": "function",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.qry",
-        "func": "msg.query = \"select * from analog_2 where time > now() - 30m;\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 740,
-        "wires": [
-            [
-                "b8ebfc66ec2d533a"
-            ]
-        ]
-    },
-    {
-        "id": "b8ebfc66ec2d533a",
-        "type": "influxdb in",
-        "z": "1dedcb3b4ff4c7fd",
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "query": "",
-        "rawOutput": false,
-        "precision": "",
-        "retentionPolicy": "",
-        "org": "organisation",
-        "x": 650,
-        "y": 740,
-        "wires": [
-            [
-                "e3931380cebf3dea"
-            ]
-        ]
-    },
-    {
-        "id": "e3931380cebf3dea",
-        "type": "function",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.pyld",
-        "func": "const payload = msg.payload;\n\nconst chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 740,
-        "wires": [
-            [
-                "e8e1281700c5c08e"
-            ]
-        ]
-    },
-    {
-        "id": "e8e1281700c5c08e",
-        "type": "ui_chart",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "",
-        "group": "e961e33ce780b073",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1030,
-        "y": 740,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "0d48e8d1b5c68a32",
-        "type": "function",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.qry",
-        "func": "msg.query = \"select * from analog_3 where time > now() - 30m;\";\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 430,
-        "y": 840,
-        "wires": [
-            [
-                "5e0b4b36f76eaaa2"
-            ]
-        ]
-    },
-    {
-        "id": "5e0b4b36f76eaaa2",
-        "type": "influxdb in",
-        "z": "1dedcb3b4ff4c7fd",
-        "influxdb": "ed4ac9b2273bb88c",
-        "name": "",
-        "query": "",
-        "rawOutput": false,
-        "precision": "",
-        "retentionPolicy": "",
-        "org": "organisation",
-        "x": 650,
-        "y": 840,
-        "wires": [
-            [
-                "faeb29f78e412bcd"
-            ]
-        ]
-    },
-    {
-        "id": "faeb29f78e412bcd",
-        "type": "function",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "set msg.pyld",
-        "func": "const payload = msg.payload;\n\nconst chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 870,
-        "y": 840,
-        "wires": [
-            [
-                "de9c1dfc77e28360"
-            ]
-        ]
-    },
-    {
-        "id": "de9c1dfc77e28360",
-        "type": "ui_chart",
-        "z": "1dedcb3b4ff4c7fd",
-        "name": "",
-        "group": "e961e33ce780b073",
-        "order": 3,
-        "width": 0,
-        "height": 0,
-        "label": "chart",
-        "chartType": "line",
-        "legend": "false",
-        "xformat": "HH:mm",
-        "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "10",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "60",
-        "cutout": 0,
-        "useOneColor": false,
-        "useUTC": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "outputs": 1,
-        "useDifferentColor": false,
-        "className": "",
-        "x": 1030,
-        "y": 840,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "480cbf0aa964ae40",
@@ -2199,19 +1410,19 @@
         ]
     },
     {
-        "id": "762fe7647a2a99c7",
+        "id": "e4958396aa743724",
         "type": "modbus-read",
-        "z": "018472ea23256c7f",
-        "name": "",
+        "z": "b0413dc278aac9e3",
+        "name": "analog, fc 4, addr 0, qty 4",
         "topic": "",
         "showStatusActivities": false,
         "logIOActivities": false,
         "showErrors": false,
         "showWarnings": true,
         "unitid": "",
-        "dataType": "Input",
+        "dataType": "InputRegister",
         "adr": "0",
-        "quantity": "6",
+        "quantity": "4",
         "rate": "1",
         "rateUnit": "s",
         "delayOnStart": false,
@@ -2221,19 +1432,234 @@
         "ioFile": "",
         "useIOForPayload": false,
         "emptyMsgOnFail": false,
-        "x": 350,
-        "y": 300,
+        "x": 250,
+        "y": 140,
         "wires": [
             [
-                "e361dde4c1c0a5ba"
+                "75838dc98ee9db70"
             ],
+            []
+        ],
+        "info": "# Relay"
+    },
+    {
+        "id": "1374de9b5620e2c8",
+        "type": "ui_chart",
+        "z": "b0413dc278aac9e3",
+        "name": "",
+        "group": "3dbe90fbd91d7fcf",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "{{msg.label}}",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 360,
+        "wires": [
             []
         ]
     },
     {
-        "id": "e361dde4c1c0a5ba",
+        "id": "2cc2fb65c2fff9f5",
+        "type": "influxdb out",
+        "z": "b0413dc278aac9e3",
+        "influxdb": "ed4ac9b2273bb88c",
+        "name": "",
+        "measurement": "",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "organisation",
+        "bucket": "bucket",
+        "x": 710,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "be9b9e19d2a1d094",
+        "type": "ui_chart",
+        "z": "b0413dc278aac9e3",
+        "name": "",
+        "group": "3dbe90fbd91d7fcf",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "0d610ef18f7a178d",
+        "type": "ui_chart",
+        "z": "b0413dc278aac9e3",
+        "name": "",
+        "group": "e961e33ce780b073",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "46567e2acb7a0b7b",
+        "type": "ui_chart",
+        "z": "b0413dc278aac9e3",
+        "name": "",
+        "group": "e961e33ce780b073",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "10",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1090,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "75838dc98ee9db70",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "map msg.payload",
+        "func": "const payload = msg.payload;\n\nconst mapped = payload.map((v, i) => {\n    return {i, v};\n});\n\nmsg.payload = mapped;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 140,
+        "wires": [
+            [
+                "5159cce19fdb1975"
+            ]
+        ],
+        "info": "# map msg.payload\r\n\r\n---\r\n\r\n## from\r\n\r\n`[value, value, value]`\r\n\r\n## into\r\n\r\n```\r\n[\r\n    {i: index, str: value},\r\n    {i: index, str: value},\r\n    {i: index, str: value},\r\n]\r\n```"
+    },
+    {
+        "id": "5159cce19fdb1975",
         "type": "split",
-        "z": "018472ea23256c7f",
+        "z": "b0413dc278aac9e3",
         "name": "",
         "splt": "\\n",
         "spltType": "str",
@@ -2241,29 +1667,287 @@
         "arraySpltType": "len",
         "stream": false,
         "addname": "",
-        "x": 590,
-        "y": 300,
+        "x": 210,
+        "y": 220,
         "wires": [
             [
-                "9d48f4a6f475664f"
+                "a9c107a44d213974"
             ]
         ]
     },
     {
-        "id": "9d48f4a6f475664f",
-        "type": "ui_text",
-        "z": "018472ea23256c7f",
-        "group": "d4b3eb9bda2b472c",
-        "order": 2,
-        "width": 0,
-        "height": 0,
+        "id": "a9c107a44d213974",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.pyld msg.msrmt msg.idx",
+        "func": "const PREFIX = \"analog\";\n\nconst payload = msg.payload;\n\nmsg.payload = payload.v;\nmsg.measurement = PREFIX + \"_\" + payload.i;\nmsg.index = payload.i;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 220,
+        "wires": [
+            [
+                "2cc2fb65c2fff9f5"
+            ]
+        ]
+    },
+    {
+        "id": "306ca2e8cb06b4b9",
+        "type": "influxdb in",
+        "z": "b0413dc278aac9e3",
+        "influxdb": "ed4ac9b2273bb88c",
         "name": "",
-        "label": "text",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "className": "",
-        "x": 760,
-        "y": 300,
-        "wires": []
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "a56c14625c10bb70"
+            ]
+        ]
+    },
+    {
+        "id": "a56c14625c10bb70",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.pyld",
+        "func": "const payload = msg.payload;\n\nconst chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 360,
+        "wires": [
+            [
+                "1374de9b5620e2c8"
+            ]
+        ]
+    },
+    {
+        "id": "02c3c0acf33d1706",
+        "type": "influxdb in",
+        "z": "b0413dc278aac9e3",
+        "influxdb": "ed4ac9b2273bb88c",
+        "name": "",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 710,
+        "y": 420,
+        "wires": [
+            [
+                "538849a769088337"
+            ]
+        ]
+    },
+    {
+        "id": "538849a769088337",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.pyld",
+        "func": "const payload = msg.payload;\n\nconst chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 420,
+        "wires": [
+            [
+                "be9b9e19d2a1d094"
+            ]
+        ]
+    },
+    {
+        "id": "220414034428f37f",
+        "type": "influxdb in",
+        "z": "b0413dc278aac9e3",
+        "influxdb": "ed4ac9b2273bb88c",
+        "name": "",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 710,
+        "y": 500,
+        "wires": [
+            [
+                "961aeb40a6a0e52e"
+            ]
+        ]
+    },
+    {
+        "id": "961aeb40a6a0e52e",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.pyld",
+        "func": "const payload = msg.payload;\n\nconst chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 500,
+        "wires": [
+            [
+                "0d610ef18f7a178d"
+            ]
+        ]
+    },
+    {
+        "id": "9d3d59c6501c7fd1",
+        "type": "influxdb in",
+        "z": "b0413dc278aac9e3",
+        "influxdb": "ed4ac9b2273bb88c",
+        "name": "",
+        "query": "",
+        "rawOutput": false,
+        "precision": "",
+        "retentionPolicy": "",
+        "org": "organisation",
+        "x": 710,
+        "y": 560,
+        "wires": [
+            [
+                "39ad77bd42541879"
+            ]
+        ]
+    },
+    {
+        "id": "39ad77bd42541879",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.pyld",
+        "func": "const payload = msg.payload;\n\nconst chartData = payload.map(d => {\n    return { x: d.time, y: d.value }\n});\n\nmsg.payload = [{\n    series: [\"test\"],\n    data: [chartData],\n    labels: [\"test\"]\n}]\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 560,
+        "wires": [
+            [
+                "46567e2acb7a0b7b"
+            ]
+        ]
+    },
+    {
+        "id": "71bceabf50f14efa",
+        "type": "inject",
+        "z": "b0413dc278aac9e3",
+        "name": "inject after 0.1, every 1",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 230,
+        "y": 460,
+        "wires": [
+            [
+                "e52f78914e7d1e22",
+                "b956d3c1b00676dd",
+                "fe493ce73a155ea3",
+                "9f2dc03a95254994"
+            ]
+        ]
+    },
+    {
+        "id": "e52f78914e7d1e22",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.query",
+        "func": "const PREFIX = \"analog\";\nconst index = 0;\n\nmsg.query =\n`SELECT value FROM ${PREFIX}_${index}\nWHERE time > now() - 30m`;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 360,
+        "wires": [
+            [
+                "306ca2e8cb06b4b9"
+            ]
+        ]
+    },
+    {
+        "id": "b956d3c1b00676dd",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.query",
+        "func": "const PREFIX = \"analog\";\nconst index = 1;\n\nmsg.query =\n`SELECT value FROM ${PREFIX}_${index}\nWHERE time > now() - 30m`;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 420,
+        "wires": [
+            [
+                "02c3c0acf33d1706"
+            ]
+        ]
+    },
+    {
+        "id": "fe493ce73a155ea3",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.query",
+        "func": "const PREFIX = \"analog\";\nconst index = 2;\n\nmsg.query =\n`SELECT value FROM ${PREFIX}_${index}\nWHERE time > now() - 30m`;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 500,
+        "wires": [
+            [
+                "220414034428f37f"
+            ]
+        ]
+    },
+    {
+        "id": "9f2dc03a95254994",
+        "type": "function",
+        "z": "b0413dc278aac9e3",
+        "name": "set msg.query",
+        "func": "const PREFIX = \"analog\";\nconst index = 3;\n\nmsg.query =\n`SELECT value FROM ${PREFIX}_${index}\nWHERE time > now() - 30m`;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 560,
+        "wires": [
+            [
+                "9d3d59c6501c7fd1"
+            ]
+        ]
     }
 ]
